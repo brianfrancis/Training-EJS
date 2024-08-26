@@ -1,0 +1,18 @@
+<h3>Recent Posts</h3>
+<% if(locals.posts){ %>
+    <div class="container">
+        <ul class="posts">
+            <% posts.forEach((element,i) => { %>  
+                <li> 
+                <a href= <%= "/view-post?postid=" + i %> >
+                    <%= element.title %> 
+                </a>
+                </li> 
+            <% }) %>
+        </ul>
+    </div>
+<% } else { %>
+    <p>No posts.</p>
+<% } %>
+
+
