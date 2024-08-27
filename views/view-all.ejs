@@ -1,0 +1,26 @@
+<h3>All Posts</h3>
+<% if(locals.posts){ %>
+    <div class="container">
+        <ul class="posts">
+            <% posts.forEach((element,i) => { %>  
+                <li> 
+                <a href= <%= "/view-post?postid=" + i %> >
+                    <%= element.title %> 
+                </a>
+                <p> <%= element.updatedOn %> </p>
+                <p> 
+                    <% let x = element.fulltext;
+                    if (x.length > 50) {
+                        x = x.substring(0,50) + "...";
+                    }
+                    %>
+                    <%= x %>
+                 
+                </p>
+                </li> 
+            <% }) %>
+        </ul>
+    </div>
+<% } else { %>
+    <p>No posts.</p>
+<% } %>

@@ -42,6 +42,10 @@ app.get("/view-post", (req, res) => {
 );
 })
 
+app.get("/view-all", (req, res) => {
+  res.render("view-all", {title : "All Posts", posts:blogPosts})
+})
+
 app.get("/create-post", (req, res) => {
   res.render("create-post", {title : "Create Post", posts:blogPosts, layout: "./layouts/sidebar"}
   );
